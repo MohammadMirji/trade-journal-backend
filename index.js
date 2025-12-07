@@ -4,8 +4,10 @@ const port = process.env.PORT || 3000
 const mongoose = require('mongoose')
 require ('dotenv').config()
 const tradesRoutes = require('./routes/trades.routes')
+const cors = require("cors");
 
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 
 // Routes
 app.use('/api/trades', tradesRoutes);

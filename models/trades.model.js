@@ -2,20 +2,20 @@ const mongoose = require('mongoose');
 
 const tradesSchema = new mongoose.Schema(
     {
-        Stock : {
+        stock : {
             type : String,
             required : true,
             trim : true
         },
-        Entry : {
+        entry : {
             type : Number,
             trim : true
         },
-        Exit : {
+        exit : {
             type : Number,
             trim : true
         },
-        PnL : {
+        pnl : {
             type : Number,
             trim : true
         }

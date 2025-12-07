@@ -4,18 +4,18 @@ const Trades = require("../models/trades.model");
 // made code by seeing taskify project for reference
 const createTrade = async (req, res) => {
   try {
-    const { Stock, Entry, Exit, PnL } = req.body;
+    const { stock, entry, exit, pnL } = req.body;
 
-    if (!Stock) {
+    if (!stock) {
       return res
         .status(400)
         .json({ sucess: false, message: "Stock name is required" });
     }
     const trades = await Trades.create({
-      Stock,
-      Entry,
-      Exit,
-      PnL,
+      stock,
+      entry,
+      exit,
+      pnL,
       // user: req.user._id,
     });
     res.status(201).json({ sucess: true, data: trades });
